@@ -1,8 +1,11 @@
-<% @links.each do |link| %>
+<% @categories.each do |category| %>
   <div>
-    <h1><%= link.name %></h1><br />
-    <i><%= link.url %></i><br />
-    <p><%= link.window %></p><br />
+    <h1><%= category.name %></h1><br />
+    <ul class='links'>
+    	<% category.links.each do |link| %>
+    	<li class='link'><%= link.name %></li>
+    	<%end%>
+    </ul>
   </div>
 
   <hr />
