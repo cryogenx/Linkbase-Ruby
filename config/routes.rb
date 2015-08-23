@@ -3,7 +3,6 @@ Linkbase::Application.routes.draw do
   devise_for :installs
   root 'categories#index'
 
-  resources :categories do
-  	resources :links
-  end
+  resources :categories
+  resources :links
 end

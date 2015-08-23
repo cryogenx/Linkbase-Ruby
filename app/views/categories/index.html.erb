@@ -1,12 +1,17 @@
-<% @categories.each do |category| %>
-  <div>
-    <h1><%= category.name %></h1><br />
-
-  	<%= category.links.each do |link| %>
-  		<h4><%= link.name %></h4>
-  	<% end %>
-
-  </div>
-
-  <hr />
-<% end %>
+ 
+ <div class='container'>
+ 	<div class = 'row col-xs-12'>
+	 	<% current_user.categories.each do |category| %>
+	   	<div class='cat-box col-xs-6'>
+		  	<h1 class='list_heading text-center' ><%= link_to category.name, '#', :data => {:toggle => "collapse", :target => "\#list#{category.id}" } %></h1>
+		    <div class='collapse' id='list<%= category.id %>'>
+		    <ul class='link_list' >
+			   	<% category.links.each do |link| %>
+			  		<li class='col-xs-3 link'><%= link_to link.name, link.url, :target => link.window %></li>
+			  	<% end %>
+		  	</ul>
+		  	</div>
+		 </div>  	
+		<% end %>
+	</div>
+</div>
