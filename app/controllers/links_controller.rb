@@ -6,5 +6,6 @@ class LinksController < ApplicationController
 	end
 
 	def show
+		
 	end
 end
