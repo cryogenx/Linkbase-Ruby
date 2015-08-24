@@ -8,7 +8,7 @@ echo "You entered: $input_variable"
 # then run bundle install
 
 # to dump a seed file uncomment the following line to disable seed dumps comment it out:
-# rake db:seed:dump EXCLUDE=[:image_name] MODELS=Course,Section,Lesson FILE=db/seeds/flixter_seed.rb
+rake db:seed:dump EXCLUDE=[] MODELS=Category,Link FILE=db/seeds/linkbase_seed.rb
 
 # see https://github.com/rroblak/seed_dump for more info on the seed_dump
 # usage and switches

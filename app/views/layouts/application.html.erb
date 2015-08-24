@@ -25,11 +25,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       	<ul class="nav navbar-nav">
         	<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        	<li><a href="#">Add Category</a></li>
+        	<% if user_signed_in? %>
+        		<li><a href="#">Add Category</a></li>
+        	<% end %>
      	</ul>
     	<ul class="nav navbar-nav navbar-right">
-    		<li><a href="#">My Profile</a></li>
-    		<li><a href="#">Share Link</a></li>
+    		<% if user_signed_in? %>
+	    		<li><a href="#">Share Link</a></li>
+	    		<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+			<% else %>
+			  	<li><%= link_to 'Sign in', new_user_session_path %></li>
+			  	<li><%= link_to 'Sign up', new_user_registration_path %></li>
+			<% end %>
      	</ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -39,8 +46,6 @@
 
 <% if notice.present? %>
   <p class="alert alert-info"><%= notice %></p>
-
-  asda
 <% end %>
 <% if alert.present? %>
   <p class="alert alert-danger"><%= alert %></p>

@@ -1,8 +1,11 @@
 Linkbase::Application.routes.draw do
   devise_for :users
-  devise_for :installs
-  root 'categories#index'
+  resource :dashboard, :only => [:show]
+  
+  root 'static_pages#index'
 
   resources :categories
   resources :links
+
+
 end
