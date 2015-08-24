@@ -1,6 +1,7 @@
 Linkbase::Application.routes.draw do
   devise_for :users
   resource :dashboard, :only => [:show]
+  resources :linkbases, :only => [:show]
   
   root 'static_pages#index'
 
