@@ -7,7 +7,7 @@
 			<% categories.each do |category| %>	
 				<div class='col-xs-6 text-center'>
 					<%= link_to category.name, '#', :class => 'list-header' %>
-					<div class='link-list'>
+					<div class='link-list well'>
 						<ul class='col-xs-12'>
 						<% category.links.each do |link| %>
 							<li class='col-xs-3'><%= link.name %></li>
