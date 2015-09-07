@@ -4,4 +4,9 @@ class Link < ActiveRecord::Base
 
 	validates :user, :category, presence: true
 
+	WINDOW_CHOICES = { 
+	    "New Window" => "_blank",
+	    "Same Window" => "_self",
+  	}
+
 end

@@ -26,7 +26,8 @@
       	<ul class="nav navbar-nav">
         	<li class="active"><%= link_to 'Home', dashboard_path %></li>
         	<% if user_signed_in? %>
-        		<li><a href="#">Add Category</a></li>
+        		<li><%= link_to 'Add Category', new_category_path %></a></li>
+            <li><%= link_to 'Add Link', new_link_path %></a></li>
         	<% end %>
      	</ul>
     	<ul class="nav navbar-nav navbar-right">
