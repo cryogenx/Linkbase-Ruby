@@ -1,5 +1,5 @@
 <div class='container-fluid'>
-	<% current_user.categories.each_slice(2) do |categories| %>
+	<% @linkbase_user.categories.each_slice(2) do |categories| %>
  		<div class = 'row col-xs-12'>
 	 		<% categories.each do |category| %>
 	   			<div class='cat-box col-sm-6 col-xs-12'>
