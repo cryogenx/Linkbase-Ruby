@@ -1,22 +1,28 @@
-<br />
-
 <div class='container-fluid'>
+	<% current_user.categories.each_slice(2) do |categories| %>
+ 		<div class = 'row col-xs-12'>
+	 		<% categories.each do |category| %>
+	   			<div class='cat-box col-sm-6 col-xs-12'>
+	   				
+	   					<button class='btn btn-info col-xs-12 list-button' type = 'button' data-toggle = "collapse" data-target = "<%= "#list#{category.id}" %>">
+  						<span class='link-header'><%= category.name %></span><span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
+  						</button>
+  						<div class="clear"></div>
+		    		<div class='collapse well' id='list<%= category.id %>'>
+		    			<ul class='link-list' >
+			   				<% category.links.each do |link| %>
+			  					<li class='col-sm-6 col-xs-6 link text-center'>
+			  						<%= link_to link.name, link.url, :target => link.window, :class => 'link' %>
+			  					</li>
 
-	<% @linkbase_user.categories.each_slice(2) do |categories| %>
-		<div class='row'>
-			<% categories.each do |category| %>	
-				<div class='col-xs-6 text-center'>
-					<%= link_to category.name, '#', :class => 'list-header' %>
-					<div class='link-list well'>
-						<ul class='col-xs-12'>
-						<% category.links.each do |link| %>
-							<li class='col-xs-3'><%= link.name %></li>
-						<% end %>
-						</ul>
-					</div>
-				</div>
+			  				<% end %>
+		  				</ul>
+		  			</div>
+		 		</div>  	
 			<% end %>
 		</div>
+		<div class = 'clear'></div>
 	<% end %>
 
-</div>
+
+</div> 
