@@ -21,6 +21,29 @@ class LinksController < ApplicationController
 		redirect_to dashboard_path
 	end
 
+	def edit
+    @link = Link.find(params[:id])
+
+    if @link.user != current_user
+      return render :text => 'You are not allowed to edit another users link', :status => :forbidden
+    end
+  end
+
+  def update
+    @link = Link.find(params[:id])
+
+    if @link.user != current_user
+      return render :text => 'You are not allowed to update another users link', :status => :forbidden
+    end
+
+    @link.update_attributes(link_params)
+    if @link.valid?
+      redirect_to root_path
+    else
+      render :edit, :status => :unprocessable_entity
+    end
+  end
+
 	def destroy
 	    @link = Link.find(params[:id])
 	    if @link.user != current_user
