@@ -22,6 +22,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
   </div>
 
+  <div class="field">
+    <%= f.label :share_key %><br />
+    <%= f.text_field :share_key, autocomplete: "off", :class => 'form-control', :value => SecureRandom.hex(5)  %>
+  </div>
+
   <br />
 
   <div class="actions">

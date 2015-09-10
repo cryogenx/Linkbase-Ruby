@@ -12,17 +12,18 @@
 		    			<ul class='link-list' >
 			   				<% category.links.each do |link| %>
 			  					<li class='col-sm-6 col-xs-6 link text-center'>
-			  						<%= link_to link.name, link.url, :target => link.window, :class => 'link' %>
-
-									<%= link_to link_path(link), :class => "btn btn-info btn-xs pull-right", :method => :update  do %>
-									    <i class="glyphicon glyphicon-pencil"></i>
-									<% end %>
-
-									<%= link_to link_path(link), :class => "btn btn-danger btn-xs pull-right", :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'} do %>
-									    <i class="glyphicon glyphicon-trash"></i>
-									<% end %>
-		  									  						
-			  					</li>
+			  						<div class='col-sm-9 col-xs-9'>
+			  							<%= link_to link.name, link.url, :target => link.window, :class => 'link' %>
+			  						</div>
+			  						<div class='edit-controls pull-right'>
+											<%= link_to link_path(link), :class => "btn btn-info btn-xs edit-button", :method => :update  do %>
+									    	<i class="glyphicon glyphicon-pencil"></i>
+											<% end %>
+											<%= link_to link_path(link), :class => "btn btn-danger btn-xs edit-button", :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'} do %>
+									    	<i class="glyphicon glyphicon-trash"></i>
+											<% end %>
+										</div>
+		  						</li>
 
 			  				<% end %>
 		  				</ul>

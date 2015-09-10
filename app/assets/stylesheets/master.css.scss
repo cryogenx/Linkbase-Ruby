@@ -22,3 +22,11 @@
   position: absolute;
   display:none;
 }
+
+.edit-button {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.link-list li:nth-child(odd) {
+	border-right: 2px solid #ccc;
+}
