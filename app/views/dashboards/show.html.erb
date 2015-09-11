@@ -3,7 +3,6 @@
  		<div class = 'row col-xs-12'>
 	 		<% categories.each do |category| %>
 	   			<div class='cat-box col-sm-6 col-xs-12'>
-	   				
 	   					<button class='btn btn-info col-xs-12 list-button' type = 'button' data-toggle = "collapse" data-target = "<%= "#list#{category.id}" %>">
   						<span class='link-header'><%= category.name %></span><span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
   						</button>
@@ -12,10 +11,10 @@
 		    			<ul class='link-list' >
 			   				<% category.links.each do |link| %>
 			  					<li class='col-sm-6 col-xs-6 link text-center'>
-			  						<div class='col-sm-9 col-xs-9'>
+			  						<div class='col-sm-9 col-xs-12'>
 			  							<%= link_to link.name, link.url, :target => link.window, :class => 'link' %>
 			  						</div>
-			  						<div class='edit-controls pull-right'>
+			  						<div class='edit-controls pull-right hidden-xs'>
 											<%= link_to edit_link_path(link), :class => "btn btn-info btn-xs edit-button" do %>
 									    	<i class="glyphicon glyphicon-pencil"></i>
 											<% end %>
@@ -35,4 +34,27 @@
 
 
 </div> 
+
+
+<!-- Modal -->
+<div id="shareModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Share Your Linkbase!</h3>
+      </div>
+      <div class="modal-body">
+      	<h4>With a link: <small>(copy and paste)</small></h4>
+        <p><%= link_to 'http://linkbase.herokuapp.com/' + linkbases_path(:share_key => current_user.share_key), linkbases_path(:share_key => current_user.share_key) %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
