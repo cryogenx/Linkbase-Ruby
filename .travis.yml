@@ -1,0 +1,11 @@
+notifications:
+  slack:
+    rooms:
+    - gtnconsulting:3ALsOdl8glj310rfiZyyFkvC#linkbase_dev
+deploy:
+  provider: heroku
+  api_key:
+    secure: M2mVUre7ciYlOyzvDQ8ldBcYM+UQiX5fDHr7Soh7LRGNrGc1u2l+lmE93lFaK5M1KHjWFA73E2TW70eI+ESXDo8C9SEi+2cPjHx+DZ1JTcWXZH9U7qLfK5O3hIqDAlMz1zPIvyz+mMKIdF298SGJw2XkJfVPQyQD38Odp5r073aHmawRRklKyF8sAyxqn8Z9hZC0jp5jW9qCoLbw536+80kYWhzU8SebY7Vst0OW5ji7TfxRPAOW4VECAGS/askdwS59fb4X1fZUWFJWwB8VJuYrWuplVIjCZsnZkk9rcuX1CqslzqK3JXdnIixPChDFlgC9akje9jwk/jeRIktaZ9RYA6VpxIRWpiEJiGpMhbkz3LzhoidctPQbjejf2hU2i+KcjptsIZDMcBphzaDwrBe9dvFbK7rYXak4BP1d2Y0XJUIJcXP1zZY0DSgsf6tDm9IWEuihFVc94iROLdOk+4+0XCSbYzzHoG6sEpk8dY1BwNUuqnpgKe+Kl1t76bq1kY8tlWCwlZr/u9u2d1p0RDD38gU3wcnm7znHsm/Im7HyP5qeic4hQKiL9U7A2UnSoK2sgRyVqubKKffnoWxQvheaLOtfWSwogI3cffQrOOWhe9aJNdSPL/N2zRwKTbhp62WVmwRt2VzrIZUSk9ufl3qGsGnSIZowS3/e6RJMJfY=
+  app: linkbase
+  on:
+    repo: cryogenx/Linkbase-Ruby
