@@ -1,0 +1,4 @@
+notifications:
+  slack:
+    rooms:
+      - gtnconsulting:3ALsOdl8glj310rfiZyyFkvC#linkbase_dev
